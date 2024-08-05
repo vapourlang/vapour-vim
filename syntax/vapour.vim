@@ -313,8 +313,7 @@ if &filetype == "rhelp"
 endif
 
 " Type
-syn region rType start=":" end=/\,)\}/ transparent
-syn keyword rType array category character complex double func integer list logical matrix numeric vector data.frame
+syn keyword rType bool factor any num struct dataframe list int char null na array category character complex double func integer logical matrix numeric vector data.frame
 
 " Name of object with spaces
 if &filetype == "rmd" || &filetype == "rrst" || &filetype == "quarto"
