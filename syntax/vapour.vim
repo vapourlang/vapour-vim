@@ -1,12 +1,12 @@
 " Vim syntax file
-" Language:	      R (GNU S)
+" Language:	      vapour
 " Maintainer:	      This runtime file is looking for a new maintainer.
 " Former Maintainers: Jakson Aquino <jalvesaq@gmail.com>
 "                     Vaidotas Zemlys <zemlys@gmail.com>
 "                     Tom Payne <tom@tompayne.org>
 " Contributor:        Johannes Ranke <jranke@uni-bremen.de>
 " Former Repository:  https://github.com/jalvesaq/R-Vim-runtime
-" Filenames:          *.R *.r *.Rhistory *.Rt
+" Filenames:          *.vp
 " Last Change:        2023 Dec 24  08:05AM
 "   2024 Feb 19 by Vim Project (announce adoption)
 "
@@ -246,6 +246,7 @@ syn match rOperator    "%\{2}\|%\S\{-}%"
 syn match rOperator '\([!><]\)\@<=='
 syn match rOperator '=='
 syn match rOperator '|>'
+syn match rOperator '\.\.'
 syn match rOperator  '\.\.'
 syn match rOperator  '\.\.\.'
 syn match rOpError  '\*\{3}'
@@ -313,7 +314,8 @@ if &filetype == "rhelp"
 endif
 
 " Type
-syn keyword rType bool factor any num struct dataframe list int char null na array category character complex double func integer logical matrix numeric vector data.frame
+syn region rType start=":" end=/\,)\}/ transparent
+syn keyword rType int char any num struct dataframe list object array category character complex double func integer list logical matrix numeric vector data.frame
 
 " Name of object with spaces
 if &filetype == "rmd" || &filetype == "rrst" || &filetype == "quarto"
