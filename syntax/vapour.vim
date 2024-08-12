@@ -196,6 +196,8 @@ syn keyword rStatement   break next return
 syn keyword rConditional if else
 syn keyword rRepeat      for in repeat while
 
+syn keyword rStorageClass let const
+
 " Constant (not really)
 syn keyword rConstant T F LETTERS letters month.abb month.name pi
 syn keyword rConstant R.version.string
@@ -315,7 +317,7 @@ endif
 
 " Type
 syn region rType start=":" end=/\,)\}/ transparent
-syn keyword rType int char any num struct dataframe list object array category character complex double func integer list logical matrix numeric vector data.frame
+syn keyword rType int char any num struct dataframe list object null na array category character complex double func integer list logical matrix numeric vector data.frame
 
 " Name of object with spaces
 if &filetype == "rmd" || &filetype == "rrst" || &filetype == "quarto"
@@ -374,6 +376,7 @@ hi def link rStatement   Statement
 hi def link rString      String
 hi def link rStrError    Error
 hi def link rType        Type
+hi def link rStorageClass StorageClass
 if g:r_syntax_hl_roxygen
   hi def link rOTitleTag   Operator
   hi def link rOTag        Operator
