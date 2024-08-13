@@ -196,7 +196,7 @@ syn keyword rStatement   break next return
 syn keyword rConditional if else
 syn keyword rRepeat      for in repeat while
 
-syn keyword rStorageClass let const
+syn keyword rStorageClass let const type
 
 " Constant (not really)
 syn keyword rConstant T F LETTERS letters month.abb month.name pi
